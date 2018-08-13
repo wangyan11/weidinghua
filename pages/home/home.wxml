@@ -1,0 +1,14 @@
+<!--pages/home/home.wxml-->
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='scroll_view_border' >
+  <image src="{{src}}"  class="laba"/>
+  <view class="srcoll_view" bindtap="textclick">{{text}}</view>
+</view>
+

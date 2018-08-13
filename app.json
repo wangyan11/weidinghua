@@ -1,0 +1,47 @@
+
+{
+  "pages":[
+    "pages/home/home",
+    "pages/list/list",
+    "pages/cart/cart",
+    "pages/mine/mine"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "backgroundColor":"#fff",
+    "borderStyle":"white",
+    "color":"#666666",
+    "selectedColor":"#d81e06",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath":"./assets/images/home.png",
+        "selectedIconPath":"./assets/images/home-selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "iconPath": "./assets/images/huangguan.png",
+        "selectedIconPath": "./assets/images/huangguan-selected.png",
+        "text": "七夕热卖"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "./assets/images/cart.png",
+        "selectedIconPath": "./assets/images/cart-selected.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "./assets/images/mine.png",
+        "selectedIconPath": "./assets/images/mine-selected.png",
+        "text": "我的"
+      }
+      
+    ]
+  }
+}
