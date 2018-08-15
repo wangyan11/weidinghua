@@ -1,2 +1,2 @@
 <!--pages/list/list.wxml-->
-<text>pages/list/list.wxml</text>
+<navList navLists="{{navLists}}"/>

@@ -35,5 +35,6 @@ App({
   },
   globalData: {
     userInfo: null
-  }
+  },
+  baseUrl: 'http://rap2api.taobao.org/app/mock/26220/api/v1'
 })

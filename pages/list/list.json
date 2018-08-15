@@ -1,1 +1,6 @@
-{}
+{
+  "navigationBarTitleText": "浪漫七夕 爱不迟到",
+  "usingComponents": {
+  "navList":"/component/navList/navList"
+  }
+}

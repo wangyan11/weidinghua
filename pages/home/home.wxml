@@ -1,6 +1,5 @@
 <!--pages/home/home.wxml-->
-<swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+<swiper indicator-dots autoplay interval="{{5000}}" duration="{{1000}}" indicator-active-color="#d81e06">
   <block wx:for="{{imgUrls}}" wx:key="{{imgUrls}}">
     <swiper-item>
       <image src="{{item}}" class="slide-image"/>
@@ -10,5 +9,47 @@
 <view class='scroll_view_border' >
   <image src="{{src}}"  class="laba"/>
   <view class="srcoll_view" bindtap="textclick">{{text}}</view>
+</view>
+<view class='list'>
+  <view class='list1-title'>狮子座生日花礼</view>
+  <view class='list1-title2'>热情,阳光,大方的狮子座</view>
+  <view wx:for="{{list1}}" wx:key="{{item.id}}" class='list1' >
+    <navigator url="../detail/detail">
+      <image src='{{item.img}}' class='list1-img'></image>
+      <view class='list-text'>{{item.title}}</view>
+      <view class='list-price'>￥{{item.price}}.00</view>
+     </navigator>
+  </view>
+  <view class='list2'>
+    <view wx:for="{{list2}}" wx:key="{{item.id}}" class='list2-item'>
+    <navigator url="../detail/detail">
+      <image src='{{item.img}}' class='list2-img'></image>
+      <view class='list-text'>{{item.title}}</view>
+      <view class='list-price'>￥{{item.price}}.00</view>
+    </navigator>
+    </view>
+  </view>
+  <view class='list3'>
+    <view wx:for="{{list3}}" wx:key="{{item.id}}" class='list3-item'>
+    <navigator url="../detail/detail">
+      <image src='{{item.img}}' class='list3-img'></image>
+      <view class='list-text'>{{item.title}}</view>
+    </navigator>
+    </view>
+   </view>
+  <view class='list4'>
+    <view class='list4-title'>热卖推荐</view>
+    <view class='list4-title2'>最新热卖集结,全国2000个大中城市3小时内送达</view>
+    <view wx:for="{{list4}}" wx:key="{{item.id}}" >
+    <navigator url="../detail/detail" class='list4-item'>
+      <image src='{{item.img}}' class='list4-img'></image>
+      <view class='list4-right'>
+        <view class='list4-text'>{{item.title}}</view>
+        <text class='list4-price'>￥{{item.price}}.00</text>
+        <button class='pay'>购买</button>
+      </view>
+    </navigator>
+    </view>
+  </view>
 </view>
 

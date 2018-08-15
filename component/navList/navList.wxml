@@ -1,0 +1,6 @@
+<!--component/navList/navList.wxml-->
+<view class='navList'>
+  <navigator wx:for="{{navLists}}" wx:key="{{item.id}}" class='navItem'>
+    <view>{{item.text}}</view>
+  </navigator> 
+</view>

@@ -1,7 +1,6 @@
 //index.js
 //获取应用实例
-const app = getApp()
-
+const app = getApp();
 Page({
   data: {
     imgUrls: [
@@ -9,12 +8,12 @@ Page({
       '../../assets/images/timg.jpg',
       '../../assets/images/timg2.jpg'
     ],
-    indicatorDots: true,
-    autoplay: true,
-    interval: 5000,
-    duration: 1000,
     src:'../../assets/images/laba.png',
-    text: "微订花, 快鲜花!全国县级以上城市均可同城速递, 3小时达, 可直接下单!"
+    text: "微订花, 快鲜花!全国县级以上城市均可同城速递, 3小时达, 可直接下单!",
+    list1:[],
+    list2: [],
+    list3: [],
+    list4: [],
   },
   changeIndicatorDots: function (e) {
     this.setData({
@@ -36,13 +35,24 @@ Page({
       duration: e.detail.value
     })
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
+  
+  //请求数据
   onLoad: function () {
+    wx.showNavigationBarLoading();
+    wx.request({
+      url:`${app.baseUrl}/home`,
+      success: (res)=>{ 
+        this.setData({
+          list1: res.data.data.list1,
+          list2: res.data.data.list2,
+          list3: res.data.data.list3,
+          list4: res.data.data.list4
+        })
+      },
+      complete:res=>{
+        wx.hideNavigationBarLoading()
+      }
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

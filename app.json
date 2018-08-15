@@ -4,12 +4,14 @@
     "pages/home/home",
     "pages/list/list",
     "pages/cart/cart",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/detail/detail"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh":true
   },
   "tabBar": {
     "backgroundColor":"#fff",
@@ -41,7 +43,6 @@
         "selectedIconPath": "./assets/images/mine-selected.png",
         "text": "我的"
       }
-      
     ]
   }
 }

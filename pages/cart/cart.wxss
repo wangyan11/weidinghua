@@ -1,1 +1,25 @@
 /* pages/cart/cart.wxss */
+.empty{
+  text-align: center;
+}
+.empty-top{
+  font-size: 30rpx;
+  color: #666666;
+  margin-top:100rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+p{
+  font-size: 26rpx;
+  color: #cccccc;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.btn{
+  font-size: 26rpx;
+  color: #d81e06;
+  width: 200rpx;
+  background: #fff;
+  border: 1rpx solid #d81e06;
+  margin-top: 30rpx;
+}

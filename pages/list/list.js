@@ -5,7 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    navLists: [
+      { id: 1, text: "七夕热卖" },
+      { id: 2, text: "人气推荐" },
+      { id: 3, text: "浪漫七夕" },
+      { id: 4, text: "爱不迟到" },
+      { id: 5, text: "更多" }
+    ]
   },
 
   /**
