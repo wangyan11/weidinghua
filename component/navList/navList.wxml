@@ -1,6 +1,36 @@
 <!--component/navList/navList.wxml-->
-<view class='navList'>
-  <navigator wx:for="{{navLists}}" wx:key="{{item.id}}" class='navItem'>
-    <view>{{item.text}}</view>
-  </navigator> 
+<view class='cate'>
+  <view class='navList'>
+    <view 
+    wx:for="{{navLists}}" 
+    wx:key="{{item.id}}" 
+    class='{{item.id === id ? "active" : "normal"}}'
+    catchtap='onClick'
+    id="{{item.id}}">
+      <view>{{item.text}}</view>
+    </view> 
+  </view>
+  <scroll-view class='lists' bindscrolltoupper="refreshGoods"
+  bindscrolltolower="getMoreGoods"
+  lower-threshold="10"
+  scroll-y>
+    <view
+    wx:for="{{lists}}" 
+    wx:key="{{item.id}}"
+    class='list-item'>
+      <image src="{{item.img}}" class='list-img'/>
+      <view class='list-item-right'>
+        <view class='list-title'>{{item.title}}</view>
+        <view class='list-item-bottom'>
+          <view class='list-price'>￥{{item.price}}.00</view>
+          <button 
+          class='list-btn' 
+          catchtap='payCatchTap' 
+          id="{{item.id}}"
+          data-img='{{item.img}}'
+          data-price='{{item.price}}'>购买</button>
+        </view>
+      </view>
+    </view> 
+  </scroll-view>
 </view>

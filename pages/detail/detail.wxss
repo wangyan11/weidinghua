@@ -1,1 +1,50 @@
 /* pages/detail/detail.wxss */
+
+page{
+  border-top: 1rpx solid pink;
+}
+swiper{
+  height: 560rpx;
+}
+.slide-image{
+  width: 100%;
+  height: 100%;
+}
+.main{
+  padding: 30rpx;
+  font-size: 28rpx;
+}
+.main-top{
+  height: 120rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.main-title{
+  line-height: 60rpx;
+}
+.main-price{
+  line-height: 60rpx;
+  color: rgb(253, 151, 168);
+}
+.main-mid{
+  display: flex;
+  height: 60rpx;
+  border-bottom: 1rpx solid #ccc;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  color: #666;
+}
+.main-bottom{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.addToCart{
+  width: 40%;
+  background: pink;
+  color: white;
+  font-size: 30rpx;
+
+}

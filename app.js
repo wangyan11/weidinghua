@@ -6,6 +6,14 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
+    //Storage获取count
+    var count = wx.getStorageSync('count') || []
+    if(count>0){
+      wx.setTabBarBadge({
+        index: 2,
+        text: `${count}`
+      })
+    }
     // 登录
     wx.login({
       success: res => {
@@ -36,5 +44,47 @@ App({
   globalData: {
     userInfo: null
   },
-  baseUrl: 'http://rap2api.taobao.org/app/mock/26220/api/v1'
+  baseUrl: 'http://rap2api.taobao.org/app/mock/26220/api/v1',
+  cart:[],
+  addToCart(id, img, price){
+    const isInCart = this.cart.filter(item => item.id===id).length;
+    if (isInCart){
+      const newCart = this.cart.map(item=>{
+        if(item.id===id){
+          return{
+            id,
+            img,
+            price,
+            count:item.count + 1
+          }
+        }else{
+          return item
+        }
+      })
+      this.cart = newCart;
+    }else{
+      this.cart.push({
+        id,
+        img,
+        price,
+        count:1
+      })
+    }
+    const text = this.cart.reduce((total, current) => {
+      return total + current.count
+    }, 0)
+    console.log(this.cart)
+    wx.setTabBarBadge({
+      index: 2,
+      text: `${text}`
+    })
+    wx.setStorage({
+      key: 'cart',
+      data: this.cart
+    })
+    wx.setStorage({
+      key: 'count',
+      data: text
+    })
+  }
 })

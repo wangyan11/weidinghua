@@ -1,18 +1,44 @@
 // pages/detail/detail.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    data:{},
+    imgs:[],
+    id:"",
+    img:"",
+    price:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log(options)
+    this.setData({
+      id: options.id,
+      img: options.img,
+      price: options.price
+    })
+    wx.request({
+      url: `${app.baseUrl}/detail/${options.id}`,
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: (res)=>{
+        this.setData({
+          data:res.data.data,
+          imgs: res.data.data.imgs
+        })
+      }
+    })
+  },
+  addToCart(e){
+    const {id,img,price} = this.data;
+    app.addToCart(id,img,price)
   },
 
   /**
