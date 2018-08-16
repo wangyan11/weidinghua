@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    data:{},
+    detail:{},
     imgs:[],
     id:"",
     img:"",
@@ -17,7 +17,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
     this.setData({
       id: options.id,
       img: options.img,
@@ -30,7 +29,7 @@ Page({
       responseType: 'text',
       success: (res)=>{
         this.setData({
-          data:res.data.data,
+          detail:res.data.data,
           imgs: res.data.data.imgs
         })
       }
@@ -39,6 +38,12 @@ Page({
   addToCart(e){
     const {id,img,price} = this.data;
     app.addToCart(id,img,price)
+  },
+  changeToCart(){
+    console.log(11)
+    wx.switchTab({
+      url: '../cart/cart'
+    })
   },
 
   /**

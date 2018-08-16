@@ -6,14 +6,7 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    //Storage获取count
-    var count = wx.getStorageSync('count') || []
-    if(count>0){
-      wx.setTabBarBadge({
-        index: 2,
-        text: `${count}`
-      })
-    }
+    
     // 登录
     wx.login({
       success: res => {
@@ -73,18 +66,12 @@ App({
     const text = this.cart.reduce((total, current) => {
       return total + current.count
     }, 0)
-    console.log(this.cart)
     wx.setTabBarBadge({
       index: 2,
       text: `${text}`
     })
-    wx.setStorage({
-      key: 'cart',
-      data: this.cart
-    })
-    wx.setStorage({
-      key: 'count',
-      data: text
-    })
+    wx.setStorageSync('cart', this.cart)
+    wx.setStorageSync('count', text)
+    
   }
 })

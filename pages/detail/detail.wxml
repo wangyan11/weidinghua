@@ -9,16 +9,16 @@
 
 <view class='main'>
   <view class='main-top'>
-    <view class='main-title'>{{data.title}}</view>
-    <view class='main-price'>￥{{data.price}}.00</view>
+    <view class='main-title'>{{detail.title}}</view>
+    <view class='main-price'>￥{{detail.price}}.00</view>
   </view>
   <view class='main-mid'>
     <view>运费:免运费</view>
-    <view>剩余:{{data.has}}</view>
-    <view>销量:{{data.sale}}</view>
+    <view>剩余:{{detail.has}}</view>
+    <view>销量:{{detail.sale}}</view>
   </view> 
 </view>
 <view class='main-bottom'>
   <button class='addToCart' catchtap='addToCart'>加入购物车</button> 
-  <button class='addToCart'>立即购买</button>
+  <button class='addToCart' catchtap='changeToCart'>立即购买</button>
 </view> 

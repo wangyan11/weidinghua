@@ -18,12 +18,30 @@ Page({
       })
     }
   },
-
+  remove(e){
+    const { cart } = this.data;
+    cart.map(item=>{
+    if(item.id===e.currentTarget.id){
+      cart.splice(item,1)
+      this.setData({
+        cart
+      })
+    }
+  })
+    wx.setStorageSync('cart', cart)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    //Storage获取count
+    var count = wx.getStorageSync('count') || []
+    if (count > 0) {
+      wx.setTabBarBadge({
+        index: 2,
+        text: `${count}`
+      })
+    }
   },
 
   /**
